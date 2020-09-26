@@ -1,3 +1,14 @@
+# JSON-Schema fakifier
+Enhance your json-schema with `faker` decorations - to be used with [`json-schema-faker`](https://github.com/json-schema-faker/json-schema-faker).
+
+
+## Installation
+```
+npm i json-schema-fakifier
+```
+
+## Example
+```typescript
 import * as jsf from "json-schema-faker";
 import {JSONSchema7} from "json-schema";
 import {fakify} from "./index";
@@ -31,3 +42,12 @@ console.log(`~~~ fakify it:`, fakified);
 console.log(`~~~ then use it to make a fake:`);
 jsf.extend('faker', () => require('faker'));
 console.log(jsf.generate(fakified));
+```
+
+
+## Contributing
+After cloning locally and `npm i`, you can run the following scripts:
+```
+npm start    // to start the example above
+npm run test // test files in spec dir
+```
