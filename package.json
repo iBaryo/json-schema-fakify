@@ -1,0 +1,28 @@
+{
+  "name": "json-schema-fakify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "example.ts",
+  "scripts": {
+    "start": "tsc && node example.js",
+    "build": "tsc",
+    "test": "tsc && jasmine specs/*.js"
+  },
+  "author": "Baryo",
+  "license": "ISC",
+  "dependencies": {
+    "@types/faker": "^5.1.2",
+    "@types/json-schema": "^7.0.6",
+    "@types/json-schema-faker": "^0.5.1",
+    "@types/pluralize": "0.0.29",
+    "faker": "^5.1.0",
+    "json-schema-faker": "^0.5.0-rcv.29",
+    "pluralize": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.5.14",
+    "jasmine": "^3.6.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  }
+}

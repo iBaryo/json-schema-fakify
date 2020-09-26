@@ -1,0 +1,6 @@
+specs/
+**/*.ts
+!**/*.d.ts
+example.*
+.gitignore
+tsconfig.json
