@@ -1,12 +1,13 @@
 {
   "name": "json-schema-fakify",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "example.ts",
   "scripts": {
     "start": "tsc && node example.js",
     "build": "tsc",
-    "test": "tsc && jasmine specs/*.js"
+    "test": "tsc && jasmine specs/*.js",
+    "prepublish": "npm run test"
   },
   "author": "Baryo",
   "license": "ISC",

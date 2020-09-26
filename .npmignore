@@ -1,6 +1,10 @@
 specs/
+**/*.js.map
+**/*.spec.js
 **/*.ts
 !**/*.d.ts
+**/*.spec.d.ts
 example.*
 .gitignore
 tsconfig.json
+.idea/
