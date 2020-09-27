@@ -9,9 +9,9 @@ npm i json-schema-fakifier
 
 ## Example
 ```typescript
+import {fakify} from "json-schema-fakifier";
 import * as jsf from "json-schema-faker";
 import {JSONSchema7} from "json-schema";
-import {fakify} from "./index";
 
 const origin = {
     type: 'object',
