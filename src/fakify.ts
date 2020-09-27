@@ -3,20 +3,22 @@ import * as fakerLibFull from "faker";
 import {singular} from "pluralize";
 import {defaultSchemaPropFakers} from "./DefaultPropFakers";
 
+type JSONSchemaFaker = JSONSchema7 & {faker?: string};
+
 const fakerLib = Object.fromEntries(
     Object.entries(fakerLibFull)
         .filter(([categoryName, category]) =>
             categoryName != 'definitions' && typeof category != 'function') // faker internals
 );
 
-export function fakify(schema: JSONSchema7, propName?: string) {
+export function fakify(schema: JSONSchemaFaker, propName?: string) {
     return {
         ...schema,
         ...enhanceFaker(schema, propName)
     };
 }
 
-function enhanceFaker(schema: JSONSchema7, propName: string) {
+function enhanceFaker(schema: JSONSchemaFaker, propName: string): JSONSchemaFaker {
     if (schema.type == 'array') {
         return {
             items: typeof schema.items == 'boolean' ? schema.items :
@@ -26,7 +28,7 @@ function enhanceFaker(schema: JSONSchema7, propName: string) {
         };
     } else if (schema.type != 'object') {
         const faker = getFakerName(schema, propName);
-        return !faker ? undefined : {faker};
+        return faker ? {faker} : undefined;
     } else {
         return {
             properties: Object.fromEntries(
@@ -40,10 +42,9 @@ function enhanceFaker(schema: JSONSchema7, propName: string) {
     }
 }
 
-function getFakerName(schema: JSONSchema7, propName: string) {
+function getFakerName(schema: JSONSchemaFaker, propName: string) {
     propName = singular(propName || '');
-    const faker = schema['faker'] || getFakerLibName(defaultSchemaPropFakers[propName] || propName);
-    return faker;
+    return schema.faker || getFakerLibName(defaultSchemaPropFakers[propName] || propName);
 }
 
 function getFakerLibName(prop: string) {

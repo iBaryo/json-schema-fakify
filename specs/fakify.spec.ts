@@ -210,7 +210,7 @@ describe('fakify', function () {
                                             faker: 'internet.email'
                                         }
                                     }
-                                }
+                                } as JSONSchema7
                             }
                         }
                     }
