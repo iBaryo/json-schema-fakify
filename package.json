@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "",
   "main": "example.ts",
+  "keywords": ["json-schema", "fake", "faker", "mocks"],
   "scripts": {
     "start": "tsc && node example.js",
     "build": "tsc",
