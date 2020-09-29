@@ -1,2 +1,2 @@
-export {fakify} from "./src/fakify";
+export {fakify, JSONSchemaFaker} from "./src/fakify";
 export {defaultSchemaPropFakers} from "./src/DefaultPropFakers";

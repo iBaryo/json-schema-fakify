@@ -3,7 +3,7 @@ import * as fakerLibFull from "faker";
 import {singular} from "pluralize";
 import {defaultSchemaPropFakers} from "./DefaultPropFakers";
 
-type JSONSchemaFaker = JSONSchema7 & {faker?: string};
+export type JSONSchemaFaker = JSONSchema7 & {faker?: string};
 
 const fakerLib = Object.fromEntries(
     Object.entries(fakerLibFull)
@@ -11,7 +11,7 @@ const fakerLib = Object.fromEntries(
             categoryName != 'definitions' && typeof category != 'function') // faker internals
 );
 
-export function fakify(schema: JSONSchemaFaker, propName?: string) {
+export function fakify(schema: JSONSchemaFaker, propName?: string): JSONSchema7 {
     return {
         ...schema,
         ...enhanceFaker(schema, propName)
