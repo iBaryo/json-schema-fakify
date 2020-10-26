@@ -2,7 +2,7 @@
   "name": "json-schema-fakify",
   "version": "1.0.7",
   "description": "",
-  "main": "example.ts",
+  "main": "example/index.ts",
   "keywords": [
     "json-schema",
     "fake",
@@ -10,7 +10,7 @@
     "mocks"
   ],
   "scripts": {
-    "start": "tsc && node example.js",
+    "start": "tsc && node example/index.js",
     "build": "tsc",
     "test": "tsc && jasmine specs/*.js",
     "prepublish": "npm run test"
@@ -25,8 +25,10 @@
     "@types/faker": "^5.1.2",
     "@types/json-schema": "^7.0.6",
     "faker": "^5.1.0",
-    "json-schema-faker": "^0.5.0-rcv.29",
     "pluralize": "^8.0.0"
+  },
+  "peerDependencies": {
+    "json-schema-faker": "^0.5.0-rcv.29"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.14",

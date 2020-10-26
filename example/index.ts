@@ -1,6 +1,6 @@
 import * as jsf from "json-schema-faker";
 import {JSONSchema7} from "json-schema";
-import {fakify} from "./index";
+import {fakify} from "../index";
 
 const origin = {
     type: 'object',
