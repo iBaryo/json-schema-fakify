@@ -5,6 +5,7 @@ specs/
 !**/*.d.ts
 **/*.spec.d.ts
 example.js
+example.ts
 .gitignore
 tsconfig.json
 .idea/
