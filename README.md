@@ -4,12 +4,12 @@ Enhance your json-schema with `faker` decorations - to be used with [`json-schem
 
 ## Installation
 ```
-npm i json-schema-fakifier
+npm i json-schema-fakify
 ```
 
 ## Example
 ```typescript
-import {fakify} from "json-schema-fakifier";
+import {fakify} from "json-schema-fakify";
 import * as jsf from "json-schema-faker";
 import {JSONSchema7} from "json-schema";
 
